@@ -15,10 +15,10 @@
   "license": "Unlicense",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/andy-ferdian/fb-wall-feeds-api"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/andy-ferdian/fb-wall-feeds-api/issues"
   },
   "dependencies": {
     "body-parser": "^1.13.2",

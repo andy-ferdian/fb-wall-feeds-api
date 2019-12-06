@@ -1,19 +1,19 @@
 ## Facebook wall feeds with passport-facebook authentication
 
-
-This is a Node.js, Express.js and Passport.js Facebook feeds API, with authenticate users using Facebook.
+This is a Node.js, Express.js and Passport.js Facebook feeds API, with authenticate users using Facebook account.
 
 ## Instructions
 
 ```bash
-  $ git clone git@github.com:andy-ferdian/fb-wall-feeds-api.git
+  $ git clone https://github.com/andy-ferdian/fb-wall-feeds-api.git
   $ cd fb-wall-feeds-api
   $ npm install
 ```
+
 Create a .env file in the root directory of your project. Add environment-specific variables on new lines in the form of NAME=VALUE.
 
 ```bash
-  Example:
+  Use this:
 
   FACEBOOK_CLIENT_ID=589814961872434
   FACEBOOK_CLIENT_SECRET=eaf7473d4ec88339ede64be87f3eafc8
@@ -23,30 +23,48 @@ Create a .env file in the root directory of your project. Add environment-specif
 Run the server.
 
 ```bash
-  $ node server.js # Runs on http://localhost:5000
+  $ npm run start # Runs on http://localhost:5000
 ```
 
 ## User login page [/login]
+
 Go to browser page:
+
 ```bash
   http://localhost:5000/login
 ```
-follow login with facebook
-## User  profile page [/profile]
 
-After login with facebook, go to profile page.
+follow login with facebook,
+
+```
+  username: inazrabuu@hotmail.com
+  password:  #Pa55w0rd#
+```
+
+## User profile page [/profile]
+
+After successfully login with facebook, we can get userid and user display at this url:
+
 ```bash
   http://localhost:5000/profile
 ```
+
 ## User feeds page / API access [/user-feeds/:userid]
-After successfully login with facebook, API can be access with this endpoint,
+
+User feeds API can be access with this endpoint,
 
 or click link 'See your FB feeds' to see the user facebook feeds.
+
 ```bash
   http://localhost:5000/user-feeds/10157154298488547
 ```
-## User  logout [/logout]
 
-  `http://localhost:5000/logout`
+Pagination also provided in the response of this end point.
 
-  to log out user
+## User logout [/logout]
+
+```bash
+  http://localhost:5000/logout
+```
+
+to log out the user
