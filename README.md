@@ -38,7 +38,9 @@ After login with facebook, go to profile page.
 ```bash
   http://localhost:5000/profile
 ```
-## User  feeds page [/user-feeds/:userid]
+## User feeds page / API access [/user-feeds/:userid]
+After successfully login with facebook, API can be access with this endpoint:
+
 Click link 'See your FB feeds' to see the user facebook feeds, or go to:
 ```bash
   http://localhost:5000/user-feeds/10157154298488547
