@@ -34,7 +34,9 @@ Go to browser page:
   http://localhost:5000/login
 ```
 
-follow login with facebook,
+Please log out any facebook account before try to login, this app can only works with user account provided.
+
+Follow login with facebook,
 
 ```
   username: inazrabuu@hotmail.com
