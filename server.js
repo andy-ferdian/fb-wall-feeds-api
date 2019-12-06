@@ -9,29 +9,6 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   localStorage = new LocalStorage("./scratch");
 }
 
-passport.use(
-  new Strategy(
-    {
-      clientID: process.env["FACEBOOK_CLIENT_ID"],
-      clientSecret: process.env["FACEBOOK_CLIENT_SECRET"],
-      callbackURL: "/return",
-      scope: "user_posts"
-    },
-    function(accessToken, profile, cb) {
-      localStorage.setItem("accessToken", accessToken);
-      return cb(null, profile);
-    }
-  )
-);
-
-passport.serializeUser(function(user, cb) {
-  cb(null, user);
-});
-
-passport.deserializeUser(function(obj, cb) {
-  cb(null, obj);
-});
-
 // Create a new Express application.
 var app = express();
 
@@ -56,6 +33,29 @@ app.use(
 // session.
 app.use(passport.initialize());
 app.use(passport.session());
+
+passport.use(
+  new Strategy(
+    {
+      clientID: process.env["FACEBOOK_CLIENT_ID"],
+      clientSecret: process.env["FACEBOOK_CLIENT_SECRET"],
+      callbackURL: "/return",
+      scope: "user_posts"
+    },
+    function(accessToken, refreshToken, profile, cb) {
+      localStorage.setItem("accessToken", accessToken);
+      return cb(null, profile);
+    }
+  )
+);
+
+passport.serializeUser(function(user, cb) {
+  cb(null, user);
+});
+
+passport.deserializeUser(function(obj, cb) {
+  cb(null, obj);
+});
 
 // Define routes.
 app.get("/", function(req, res) {
