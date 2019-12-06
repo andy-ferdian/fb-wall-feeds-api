@@ -8,6 +8,9 @@
     "passport",
     "graph api"
   ],
+  "scripts": {
+    "start": "node server.js"
+  },
   "author": "Andy Ferdian",
   "license": "Unlicense",
   "repository": {
