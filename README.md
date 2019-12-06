@@ -43,7 +43,7 @@ follow login with facebook,
 
 ## User profile page [/profile]
 
-After successfully login with facebook, we can get userid and user display at this url:
+After successfully login with facebook, we can get userId and user displayName at this url:
 
 ```bash
   http://localhost:5000/profile

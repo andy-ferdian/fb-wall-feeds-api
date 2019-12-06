@@ -9,17 +9,15 @@ if (typeof localStorage === "undefined" || localStorage === null) {
   localStorage = new LocalStorage("./scratch");
 }
 
-var FacebookStrategy = require("passport-facebook");
-
 passport.use(
   new Strategy(
     {
       clientID: process.env["FACEBOOK_CLIENT_ID"],
       clientSecret: process.env["FACEBOOK_CLIENT_SECRET"],
       callbackURL: "/return",
-      scope: ["manage_pages", "user_posts"]
+      scope: "user_posts"
     },
-    function(accessToken, refreshToken, profile, cb) {
+    function(accessToken, profile, cb) {
       localStorage.setItem("accessToken", accessToken);
       return cb(null, profile);
     }
