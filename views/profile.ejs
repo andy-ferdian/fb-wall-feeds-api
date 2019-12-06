@@ -1,0 +1,19 @@
+<p>
+UserID: <%= user.id %><br/>
+</p>
+<p>
+  Name: <%= user.displayName %><br/>
+</p>
+<p>
+  <a href="http://localhost:5000/user-feeds/<%= user.id %>">See your FB feeds</a><br/>
+</p>
+<p>
+  <% if (user.emails) { %>
+  Email: <%= user.emails[0].value %><br/>
+  <% } %>
+</p>
+<p>
+  <% if (user) { %>
+  <a href="/logout">Logout</a>
+  <% } %>
+</p>
